@@ -1,13 +1,9 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
-  viewportHeight: 1080,
+    viewportHeight: 1080,
     viewportWidth: 1920,
-  e2e: {
-    baseUrl: 'http://localhost:4200',
-    excludeSpecPattern : [
-      '**/1-getting-started/*',
-      '**/2-advanced-examples/*'
-    ]
-  },
+    e2e: {
+        baseUrl: 'https://www.deckofcardsapi.com',
+    },
 });
