@@ -19,5 +19,5 @@ This repository contains Cypress automation tests for the Deck of Cards API.
 
 2. npm install
 
-3. npx cypress open (open to brower)
+3. npx cypress open (open to brower)\
    npx cypress run (headless mode)
