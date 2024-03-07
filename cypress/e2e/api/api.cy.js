@@ -38,34 +38,5 @@ describe('Deck of Cards API', () => {
                 }
             );
         });
-
-        // Custom Cypress command to check for blackjack
-        Cypress.Commands.add('checkForBlackjack', (player, cards) => {
-            const hasBlackJack = (cards) => {
-                if (cards.length === 2) {
-                    const firstCardValue = cards[0].value;
-                    const secondCardValue = cards[1].value;
-
-                    return (
-                        (firstCardValue === 'ACE' &&
-                            ['10', 'JACK', 'QUEEN', 'KING'].includes(
-                                secondCardValue
-                            )) ||
-                        (secondCardValue === 'ACE' &&
-                            ['10', 'JACK', 'QUEEN', 'KING'].includes(
-                                firstCardValue
-                            ))
-                    );
-                }
-
-                return false;
-            };
-
-            cy.then(() => {
-                if (hasBlackJack(cards)) {
-                    cy.log(`${player} has blackjack!`);
-                }
-            });
-        });
     });
 });
